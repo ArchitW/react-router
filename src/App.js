@@ -14,16 +14,28 @@ const PageNotFound = () => (
 		</h1>
 	</div>
 );
+const Header = () => (
+	<header>
+		<h1>Header</h1>
+		<Link to="/">Dashboard</Link>
+		<Link to="/create">Create Expense</Link>
+		<Link to="/edit">Edit Expense</Link>
+		<Link to="/help">Help</Link>
+	</header>
+);
 function App() {
 	return (
 		<Router>
-			<Switch>
-				<Route path="/" component={ExpenseDashboardPage} exact={true} />
-				<Route path="/create" component={AddExpensePage} />
-				<Route path="/edit" component={EditExpensePage} />
-				<Route path="/help" component={HelpPage} />
-				<Route component={PageNotFound} />
-			</Switch>
+			<div>
+				<Header />
+				<Switch>
+					<Route path="/" component={ExpenseDashboardPage} exact={true} />
+					<Route path="/create" component={AddExpensePage} />
+					<Route path="/edit" component={EditExpensePage} />
+					<Route path="/help" component={HelpPage} />
+					<Route component={PageNotFound} />
+				</Switch>
+			</div>
 		</Router>
 	);
 }
