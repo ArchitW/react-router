@@ -11,7 +11,12 @@ const PageNotFound  = () => <div>
                 - Make sure not to use it for external domains. */
 		    </h1>
         </div>
-const Header = () => <div> I am Header </div>
+const Header = () =>( <div> I am Header </div>
+		<h1>Header</h1>
+        // use NavLink for navigation rather than Link to=""
+		<NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink>
+		<NavLink to="/hello" activeClassName="is-active">Hello</NavLink>
+)
 
 
 

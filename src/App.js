@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link, NavLink } from 'react-router-dom';
 
 const ExpenseDashboardPage = () => <div> ExpenseDashboardPage </div>;
 const AddExpensePage = () => <div>AddExpensePage</div>;
@@ -17,10 +17,18 @@ const PageNotFound = () => (
 const Header = () => (
 	<header>
 		<h1>Header</h1>
-		<Link to="/">Dashboard</Link>
-		<Link to="/create">Create Expense</Link>
-		<Link to="/edit">Edit Expense</Link>
-		<Link to="/help">Help</Link>
+		<NavLink to="/" activeClassName="is-active" exact={true}>
+			Dashboard
+		</NavLink>
+		<NavLink to="/create" activeClassName="is-active">
+			Create Expense
+		</NavLink>
+		<NavLink to="/edit" activeClassName="is-active">
+			Edit Expense
+		</NavLink>
+		<NavLink to="/help" activeClassName="is-active">
+			Help
+		</NavLink>
 	</header>
 );
 function App() {
